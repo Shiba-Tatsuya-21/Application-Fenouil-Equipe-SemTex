@@ -1,6 +1,6 @@
 # Application-Fenouil-Equipe-SemTex
 
-Voici la structure de la base de données qu'utilise l'application Fenouil de notre équipe :
+Voici la structure de la base de données qu'utilise l'application Fenouil de notre équipe : 
 
 Afin de faire fonctionner l'application, il faut télécharger le dossier src et mettre tous son contenu sur un serveur PHP. Après cela, il faut créer la base de données de l'application avec les tables ci-dessus. Enfin, il vous faudra modifier le fichier db.php afin que vous réaliser la connexion à votre base de données.
 
