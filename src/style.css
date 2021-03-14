@@ -1,0 +1,29 @@
+a, u {
+    text-decoration: none;
+}
+   .pure-button {
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+}
+
+
+.pure-button-delete {
+  color: white;
+  background: red;
+}
+.pure-button-update {
+  color: white;
+  background: blue;
+}
+.pure-button-create{
+      color: white;
+  background: green;
+}  
+
+.tableFixHead { overflow-y: auto; height: 600px; }
+.tableFixHead thead th { position: sticky; top: 0; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
