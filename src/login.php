@@ -42,7 +42,10 @@
                  echo "<script type='text/javascript'>window.top.location='anomalie.php';</script>";
                  }else if($username == "prospection"){
                  echo "<script type='text/javascript'>window.top.location='pub.php';</script>";
-                 }
+                 }elseif ($username == "directeur") {
+                 echo "<script type='text/javascript'>window.top.location='pageDirecteur.php';</script>";
+	# code...
+}
          
          
              } else {//si mot de passe ou username incorrect 
