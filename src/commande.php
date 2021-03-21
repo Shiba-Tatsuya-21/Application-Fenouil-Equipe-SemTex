@@ -19,6 +19,17 @@
            });
          });
       </script>
+            <style>
+          body{
+
+      margin: 0;
+      padding: 0;
+      background: url(images/tableau.png) no-repeat;
+      background-size: cover;
+      font-family: sans-serif;
+      color: black;
+      }
+      </style>
    </head>
    <body>
       <div>
@@ -77,6 +88,7 @@
                           
                           $numerounique = $_POST['identifiantarticle'];
                           $nomarticle = $_POST['Désignation'];
+                          $nomarticle = mysqli_real_escape_string($con, $nomarticle);
                           $prixunitaire = $_POST['prixunitaire'];
                           $quantite = $_POST['quantité'];
                           $montant = $_POST['prixunitaire'] * $_POST['quantité'];

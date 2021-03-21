@@ -92,7 +92,7 @@
             <label>Prénom : </label>
             <input type="text" class="individu-input" name="newprénom"  maxlength="30" size="35" value="<?php echo $row[prénom]; ?>" required/>
             <label>Date de naissance : </label>
-            <input type="date" class="individu-input" name="newdate" value="<?php echo $row[date_de_naissance]; ?>" required/>
+            <input type="date" class="individu-input" name="newdate" value="<?php echo $row[date_de_naissance]; ?>" min="1900-01-01" max="2003-01-01" required/>
              </br>
               </br>
             <label>Catégorie socio-professionnelle: </label>

@@ -110,7 +110,7 @@
             <input type="text" class="individu-input" name="prénom"  maxlength="30" size="35" required/>
             </br></br>
             <label>Date de naissance : </label>
-            <input type="date" class="individu-input" name="date" required/>
+            <input type="date" class="individu-input" name="date" min="1900-01-01" max="2003-01-01" required/>
             <label>Catégorie socio-professionnelle: </label>
             <select name="socio" size="1">
                <?php 
@@ -141,7 +141,7 @@
             <label>Numéro de téléphone : </label>
             <input type="text" class="individu-input" name="téléphone"  maxlength="10" minlength="10" onkeypress="validate_integer(event)" required/>
             <label>Adresse mail (facultative) : </label>
-            <input name="mail" class="individu-input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"   size="60" maxlength="50">
+            <input name="mail" class="individu-input" type="email" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"   size="60" maxlength="50">
              </br></br>
             <label>Caractéristique commerciale : </label>
             <select name="commerciale" size="1">
