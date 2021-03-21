@@ -97,7 +97,7 @@
          <input type="radio" name="anomalie" value="chequenonsigner" id="Inputchequeano" />Chèque non-signé
          </br></br>
          <input type="radio" name="radio"  id="choixCarte" onclick="videInfo()" value="Carte bancaire"/>Carte bancaire
-         <input type="text" class="reglement-input" name="numcarte"  onkeypress="validate_integer(event)" maxlength="12" size="20" placeholder="Numéro de la carte" id="Inputcartenum" readonly/>
+         <input type="text" class="reglement-input" name="numcarte"  onkeypress="validate_integer(event)" minlength="16" maxlength="16" size="20" placeholder="Numéro de la carte" id="Inputcartenum" readonly/>
          <label>Date d'expiration de la carte</label>
          
          
@@ -105,7 +105,7 @@
          <input type="radio" name="anomalie" value="cbinvalide" id="Inputcarteano" disabled/>CB invalide
          </br></br>
          <label>Montant du règlement : </label>
-         <input type="text" maxlength="7" class="article-input"  name="montant" onkeypress="validate_decimal(event)" pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)" step=".01" required/>
+         <input type="text" maxlength="10" class="article-input"  name="montant" onkeypress="validate_decimal(event)" pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)" step=".01" required/>
          <input class="pure-button pure-button-create" type="submit" value="Règler commande" name="règler" class="article-button"/>
          <h2 style="color: red; font-weight: bold;">
             <?php 
@@ -117,22 +117,22 @@
                
                $montantreglement = $_POST['montant'];
                
-               
+               $insertionavant=0;
                
                $anomalie = false;
                
                
-               //  si on a clqiuer sur le bouton régler
+               //  si on a cliquer sur le bouton régler
                if(isset($_POST['règler'])){
                  //en fonction de sur quel bouton radio Chèque non-signé ou CB invalide on prépare la requête pour insérer l'anomalie du moyen de paiement dans la table anomalie
                  switch($_POST['anomalie']) {
                    case "cbinvalide":
-                        $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`, `résolue`) VALUES ($rowid[id_client],$rowid[id_commande],'Problème sur le moyen de paiement',0)";
+                        $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`,`description2`,`statut`,`résolue`,`dateAnomalie`) VALUES ($rowid[id_client],$rowid[id_commande],'Problème sur le moyen de paiement','',0,0,'$datetoday')";
                          $anomalie = true;
                         //echo $sqlano;
                        break;
                    case "chequenonsigner":
-                       $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`, `résolue`) VALUES ($rowid[id_client],$rowid[id_commande],'Problème sur le moyen de paiement',0)";
+                       $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`,`description2`,`statut`,`résolue`,`dateAnomalie`) VALUES ($rowid[id_client],$rowid[id_commande],'Problème sur le moyen de paiement','',0,0,'$datetoday')";
                         $anomalie = true;
                         //echo $sqlano;
                        break;
@@ -140,6 +140,7 @@
                }
                     //si on a sélectionner un des bouton radio Chèque non-signé ou CB invalide
                    if($_POST['anomalie']){
+                       $insertionavant=1;
                        //si la reqête n'est pas vide
                         if($sqlano != ""){
                             //fait insertion anomalie paiement
@@ -151,7 +152,14 @@
                    }
                    //si le montant régler est différent du montant de la commande insérer dans anomalie une erreur sur le montant'
                    if($montantreglement != $rowid[MontantCommande]){
-                           $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`, `résolue`) VALUES ($rowid[id_client],$rowid[id_commande],'Erreur sur le montant',0)";
+                           if($insertionavant){
+                               $sqlano= "UPDATE `anomalie` SET description2='Erreur sur le montant' WHERE id_commande=$rowid[id_commande]";
+                           }else{
+                               $sqlano = "INSERT INTO `anomalie`( `id_client`, `id_commande`, `description`,`description2`,`statut`,`résolue`,`dateAnomalie`) VALUES ($rowid[id_client],$rowid[id_commande],'Erreur sur le montant','',0,0,'$datetoday')";
+                           }
+                           
+                           
+                           //echo $sqlano;
                             $resultano = $con->query($sqlano);
                              $anomalie = true;
                             

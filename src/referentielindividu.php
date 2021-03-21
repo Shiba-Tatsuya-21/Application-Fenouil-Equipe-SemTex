@@ -44,6 +44,18 @@
       .sidenav a {font-size: 18px;}
       }
    </style>
+      <style>
+          body{
+
+      margin: 0;
+      padding: 0;
+      background: url(images/tableau.png) no-repeat;
+      background-size: cover;
+      font-family: sans-serif;
+      color: black;
+      }
+      </style>
+   
    <body>
       <div id="mySidenav" class="sidenav">
          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

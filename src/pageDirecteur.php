@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
    <head>
       <meta charset="utf-8"/>
-      <title>Gestions des référentiels</title>
+      <title>Direction</title>
       <link rel="stylesheet" href="style.css"/>
       <script src="script.js"></script> 
    </head>
@@ -54,14 +53,13 @@
    <body>
       <div id="mySidenav" class="sidenav">
          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-         <a href="pub.php"> Administration du référentiel</a>
-         <a href="referentielindividu.php"> Création de cible de routage</a>
+         <a href="pub.php"> Administration du rÃ©fÃ©rentiel</a>
+         <a href="referentielindividu.php"> CrÃ©ation de cible de routage</a>
          <a href="anomalie.php"> Gestion des anomalies</a>
          <a href="commande.php"> Saisie des commandes</a>
-         <a href="logout.php">Déconnexion</a>
+         <a href="logout.php">DÃ©connexion</a>
       </div>
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
-      <h1 align="center">Bienvenue sur la page de l'administration des référentiels </h1>
+      <h1 align="center">Bienvenue sur la page du directeur de la stratÃ©gie : </h1>
    </body>
 </html>
-

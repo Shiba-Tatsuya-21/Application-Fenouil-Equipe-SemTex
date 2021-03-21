@@ -51,7 +51,7 @@
              } else {//si mot de passe ou username incorrect 
                  echo "<div class='loginbox'>
                        <h3>Nom d'utilisateur ou Mot de passe incorrect !!!</h3><br/>
-                       <p class='link'>Cliquer  <a href='login.php'>ici</a> pour réessayer.</p>
+                       <p class='link'>Cliquer  <a href='login.php' style='color: red;font-size: large; font-weight: bold;'>ICI</a> pour réessayer.</p>
                        </div>";
              }
          } else {
