@@ -1,0 +1,10 @@
+Identifiant individu : 79
+Nom : Bernard
+Prénom : Hervé
+Code postal : 77127
+Ville : Moissy
+Adresse : 14 rue des maillettes
+Mail : 
+Anomalie 1 : Problème sur le moyen de paiement
+Anomalie 2 : Erreur sur le montant
+Date anomalie : 2021-03-20
