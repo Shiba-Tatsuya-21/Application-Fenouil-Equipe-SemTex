@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -59,7 +57,7 @@
    <body>
       <div id="mySidenav" class="sidenav">
          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-         <a href="referentielarticle.php">Référentiel article</a>
+         <a href="referentielarticle.php">Référentiel Article</a>
          <a href="referentielindividu.php">Référentiel Client</a>
          <a href="logout.php">Déconnexion</a>
       </div>

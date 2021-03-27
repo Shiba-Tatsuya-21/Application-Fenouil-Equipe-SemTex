@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -81,7 +79,7 @@
              if($result){
                  //Si on viens de la page des commandes on t'y renvoie
                  if($_GET['commande']==1){
-                    echo "<script type='text/javascript'>window.top.location='commande.php';</script>";
+                    echo "<script type='text/javascript'>window.top.location='infoclientcommande.php';</script>";
                      
                  }else{//on redirige vers la page qui liste les individu
                     echo "<script type='text/javascript'>window.top.location='referentielindividu.php';</script>";

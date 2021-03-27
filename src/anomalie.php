@@ -78,7 +78,7 @@
          <input type="date" class="individu-input" name="dateanomalie"  />
          <input class="pure-button pure-button-create" type="submit" value="Rechercher" name="rechercher" class="article-button"/>
       </form>
-      <div class="tableFixHead"  style="height:600px" >
+      <div class="tableFixHead"  style="height:800px" >
          <table border="3">
             <thead>
                <th>Numéro client</th>
@@ -223,7 +223,7 @@
                            if($row["statut"]==1) {
                            ?>
                         <input class="pure-button pure-button-update" type="submit" value="Courrier" name="envoie"
-                           />
+                           disabled/>
                         <?php
                            #rajouter disabled juste au dessus dans le input pour ne peut pas  cliquer sur le bouton pour alimenter le fichier des anomalie
                            }
@@ -236,9 +236,9 @@
                   $datetime1 = new DateTime($datenow);
                   $datetime2 = new DateTime($row["dateAnomalie"]);
                   $difference = $datetime1->diff($datetime2);
-                  //si cela fait 1 jour ou plus que les anomalie on été générer 
-                  if($difference->d>=1){
-                      echo "<br>Le client numéro : ".$row["id_client"]." est devenu client interdit car cela fait 30 jours qu'il n'a pas réglè son anomalie !!!<br>";
+                  //si cela fait 1 jour ou plus que les anomalie on été générer remplacer 1 par 30
+                  if($difference->d>=30 && $row["résolue"]==0){
+                      //echo "<br>Le client numéro : ".$row["id_client"]." est devenu client interdit car cela fait 30 jours qu'il n'a pas réglè son anomalie !!!<br>";
                       //faire passer les clients comme : Client interdit
                       $sqlupdate = "UPDATE `individu` SET `statut`= 'Client interdit' WHERE  id_individu=".$row["id_client"];
                           
@@ -246,7 +246,7 @@
                           
                           $resultupdate = $con->query($sqlupdate);
                           if(!$resultupdate)  {
-                              echo "Erreur dans la mise a jour du statut du client en un Client interdit !!!";  
+                              echo "Erreur dans la mise à jour du statut du client en un Client interdit !!!";  
                           }
                   }
                           

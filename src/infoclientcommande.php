@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -111,7 +109,7 @@
                   
                   //si on a rechercher dans la table individu l'identifiant et que l'individu n'existe pas 
                   if ($row == "" && $doinsert==1) {
-                  echo "Le client ayant cette indentifiant unique n'existe pas veuillez le créer!!!";
+                  echo "Le client ayant cet indentifiant unique n'existe pas veuillez le créer!!!";
                   }
                   ?>
             </h3>
