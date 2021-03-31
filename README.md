@@ -4,7 +4,9 @@
 Lien vers l'application : https://fenouil-semtex.000webhostapp.com/login.php
 
 Compte Saisie des commandes Nom d'utilisateur : assistant et mot de passe : assistant 
+
 Compte Anomalies Nom d'utilisateur : gestionnaire et mot de passe : gestionnaire 
+
 Compte Administration du référentiel Nom d'utilisateur : responsable et mot de passe : responsable 
 
 Afin de faire fonctionner l'application, il faut télécharger le dossier src et mettre tout son contenu sur un serveur PHP. Après cela, il faut créer la base de données de l'application. Enfin, il vous faudra modifier le fichier db.php afin que vous réalisiez la connexion à votre base de données.
