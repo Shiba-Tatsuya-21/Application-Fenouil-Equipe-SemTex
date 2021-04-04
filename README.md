@@ -15,7 +15,7 @@ Compte du directeur Nom d'utilisateur : directeur et mot de passe : directeur
 
 Compte responsable du routage Nom d'utilisateur : envois et mot de passe : envois 
 
-Afin de faire fonctionner l'application, il faut télécharger le dossier src et mettre tout son contenu sur un serveur PHP. Après cela, il faut créer la base de données de l'application. Enfin, il vous faudra modifier le fichier db.php afin que vous réalisiez la connexion à votre base de données.
+Afin de faire fonctionner l'application, il faut télécharger le dossier src et mettre tout son contenu sur un serveur PHP. Après cela, il faut créer la base de données de l'application avec la même structure que l'image du nom de Structure Base de données Application Fenouil.png qui est dans le dossier src/images/. Enfin, il vous faudra modifier le fichier db.php afin que vous réalisiez la connexion à votre base de données.
 
 Les développeurs sont Vincent Pisano, Benoît Danglades et Jeancy Mupuanga Lumbanzila. Ils travaillent localement chacun sur leur machine et publient ensuite le projet sur un compte en commun sur le site 000webhostapp.com.
 
